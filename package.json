@@ -12,9 +12,9 @@
     "migration:revert": "cross-env NODE_ENV=development typeorm-ts-node-commonjs -d ./src/main/config/database/data-source.ts migration:revert",
     "test": "jest --silent --runInBand",
     "test:watch": "cross-env NODE_ENV=development jest --watch",
-    "lint": "eslint . --ext .ts --fix"
+    "lint": "eslint . --ext .ts --fix",
+    "prepare": "husky install"
   },
-
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
