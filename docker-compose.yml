@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+  template-postgres:
+    container_name: template
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: some-user
+      POSTGRES_DB: example
+      POSTGRES_PASSWORD: example
+    ports:
+      - "5410:5432"
+    volumes:
+      - ./data/data:/var/lib/postgresql/data
