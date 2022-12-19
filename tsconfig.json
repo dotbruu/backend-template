@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "commonjs",
+    "lib": ["es6", "DOM"],
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "removeComments": true,
+    "baseUrl": "./src",
+    "rootDir": "./",
+    "isolatedModules": false,
+    "paths": {
+      "@/types/*": ["./@types/*"],
+      "@contexts/*": ["./contexts/*"],
+      "@main/*": ["./main/*"],
+      "@shared/*": ["./shared/*"],
+      "@utils/*": ["./shared/utils/*"],
+      "@validation/*": ["./shared/validations/*"],
+    },
+    "allowJs": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "typeRoots": ["./src/main/types", "./node_modules/@types"]
+  },
+  "include": ["**/*", "jest.config.js"]
+}
