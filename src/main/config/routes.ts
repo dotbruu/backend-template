@@ -5,7 +5,7 @@ import { ROOT_FOLDER } from "@main/constants/path";
 function mapRoutes(): string[] {
   const files = mapProjectFiles(ROOT_FOLDER);
 
-  return files.filter((file) => file.includes(".routes.ts"));
+  return files.filter(file => file.includes(".routes.ts"));
 }
 
 export default (app: Express): void => {
@@ -14,7 +14,7 @@ export default (app: Express): void => {
 
   const routes = mapRoutes();
 
-  routes.map(async (route) => {
+  routes.map(async route => {
     if (route.includes(".test.")) return;
 
     (await import(route)).default(router);

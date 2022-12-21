@@ -8,7 +8,7 @@ interface Middleware {
 
 export const adaptResponse = (
   response: Response,
-  httpResponse: HttpResponse
+  httpResponse: HttpResponse,
 ): Response => {
   if (httpResponse.statusCode === 200) {
     return response.status(httpResponse.statusCode).json(httpResponse.body);
@@ -21,7 +21,7 @@ export const adaptResponse = (
 
 export const adaptRoute = (
   controller: Controller,
-  middlewares?: Middleware[]
+  middlewares?: Middleware[],
 ) => {
   return async (request: Request, response: Response) => {
     const httpRequest: HttpRequest = {
